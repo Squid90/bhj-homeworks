@@ -11,7 +11,7 @@ modalClose.forEach((element) => {
             parent.classList.toggle('modal_active');
         };
     }
-)
+);
 
  showSucces.onclick = function() {
     modalSucces.classList.toggle('modal_active');
