@@ -7,13 +7,9 @@ const start = new Date().getTime();
 cookie.onclick = function() {
     const end = new Date().getTime();
     timerNow = (end - start)/1000;
-    clikTime = (timerNow - timerLast).toFixed(2);
+    clikTime = (1/(timerNow - timerLast)).toFixed(2);
     timerLast = timerNow;
     clickerCounter += 1;
     document.getElementById('clicker__counter').textContent = `${clickerCounter} Время отклика: ${clikTime}`;
-    if (clickerCounter % 2 == 0) {
-        cookie.width = 400;
-    } else {
-        cookie.width = 200;
-    }
+    cookie.width = clickerCounter % 2 ? 250 : 200
 };
