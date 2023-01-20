@@ -7,10 +7,7 @@ const i = (element) => element.classList.contains('slider__item_active');
 function changePictureNext (activePosition) {
     activePosition = picture.findIndex(i);
     picture[activePosition].classList.toggle('slider__item_active');
-
-    //(activePosition === picture.length - 1) ? picture[0].classList.toggle('slider__item_active') : picture[activePosition + 1].classList.toggle('slider__item_active');
-    
-    (activePosition === picture.length - 1) ? activePosition = 0 : activePosition += 1;
+    activePosition = (activePosition === picture.length - 1) ? 0 : activePosition + 1;
     picture[activePosition].classList.toggle('slider__item_active')
 
 };
@@ -18,7 +15,7 @@ function changePictureNext (activePosition) {
 function changePicturePrev (activePosition) {
     activePosition = picture.findIndex(i);
     picture[activePosition].classList.toggle('slider__item_active');
-    (activePosition === 0) ? activePosition = picture.length - 1 : activePosition -= 1;
+    activePosition = (activePosition === 0) ? picture.length - 1 : activePosition - 1;
     picture[activePosition].classList.toggle('slider__item_active')
 };
 
