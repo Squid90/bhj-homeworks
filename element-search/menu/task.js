@@ -7,7 +7,7 @@ menuLink.forEach((element) => {
       const openMenu = parents.querySelector('.menu_sub');
       
       if (openMenu === null){
-         return false;
+         return true;
       } else {
          if (checkActive !== null) {
             if (openMenu.classList.contains('menu_active')) {
