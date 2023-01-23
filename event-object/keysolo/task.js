@@ -17,16 +17,20 @@ class Game {
   }
 
   registerEvents() {
-    const checkSymbol = this.currentSymbol.textContent;
+    let funcSuccess = this.success.bind(this);
+    let funcFail = this.fail.bind(this);
     let printSymbol = "";
     document.addEventListener('keyup', function(element) {
+      const checkSymbol = document.querySelector('.symbol_current').textContent;
       printSymbol = element.key;
-      (checkSymbol.toLowerCase() === printSymbol.toLowerCase()) ? this.success() : this.fail();
+      (checkSymbol.toLowerCase() == printSymbol.toLowerCase()) ? funcSuccess() : funcFail();
     });
- 
+    
   }
 
+
   success() {
+    
     if(this.currentSymbol.classList.contains("symbol_current")) this.currentSymbol.classList.remove("symbol_current");
     this.currentSymbol.classList.add('symbol_correct');
     this.currentSymbol = this.currentSymbol.nextElementSibling;
