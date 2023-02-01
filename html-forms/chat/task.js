@@ -33,7 +33,7 @@ chatWidget.addEventListener('click', () => {
 
 chatInput.addEventListener("keyup", function(e) {
     if (e.code === 'Enter') {
-        if (chatInput.value === "") {
+        if (chatInput.value.trim() === '') {
             alert('Введите сообщение');
         } else {
             messages.innerHTML += `

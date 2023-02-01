@@ -68,8 +68,9 @@ class Autocomplete {
   }
 
   getMatches( text ) {
+    console.log(this.input.options);
     const wordsList = [];
-    const option = [...this.input.querySelectorAll('option')];
+    const option = [...this.input.options];
     option.forEach((element) => {
       if(element.textContent.includes(text)) {
         wordsList.push({
