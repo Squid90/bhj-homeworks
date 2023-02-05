@@ -17,12 +17,12 @@ tooltip.forEach((element) => {
                 activeTag.classList.remove('tooltip_active');
                 nextTooltip.classList.add('tooltip_active');
                 nextTooltip.innerText = element.getAttribute('title');
-                nextTooltip.setAttribute('style', `left: ${10/*left*/}; top: ${10/*top*/}`);
+                nextTooltip.setAttribute('style', `left: ${0/*left*/}; top: ${0/*top*/}`);
             }
         } else {
             nextTooltip.classList.add('tooltip_active');
             nextTooltip.innerText = element.getAttribute('title');
-            nextTooltip.setAttribute('style', `left: ${10/*left*/}; top: ${10/*top*/}`);
+            nextTooltip.setAttribute('style', `left: ${0/*left*/}; top: ${0/*top*/}`);
         }
         
         
