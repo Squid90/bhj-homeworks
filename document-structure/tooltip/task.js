@@ -5,11 +5,10 @@ tooltip.forEach((element) => {
             '<div class="tooltip" >Текст подсказки</div>'
     );
     const nextTooltip = element.nextSibling;
-    const { top, left } = element.getBoundingClientRect();
 
     element.addEventListener('click', function() {
         const activeTag = document.querySelector('.tooltip_active');
-
+        const { top, left, height } = element.getBoundingClientRect();
         if (activeTag !== null) {
             if (nextTooltip.classList.contains('tooltip_active')) {
                 nextTooltip.classList.remove('tooltip_active');
@@ -17,17 +16,15 @@ tooltip.forEach((element) => {
                 activeTag.classList.remove('tooltip_active');
                 nextTooltip.classList.add('tooltip_active');
                 nextTooltip.innerText = element.getAttribute('title');
-                nextTooltip.setAttribute('style', `left: ${0/*left*/}; top: ${0/*top*/}`);
+                nextTooltip.setAttribute('style', `left: ${left}px; top: ${top + height}px`);
             }
         } else {
             nextTooltip.classList.add('tooltip_active');
             nextTooltip.innerText = element.getAttribute('title');
-            nextTooltip.setAttribute('style', `left: ${0/*left*/}; top: ${0/*top*/}`);
-        }
-        
-        
+            nextTooltip.setAttribute('style', `left: ${left}px; top: ${top + height}px`);
+        } 
     });
     element.onclick = function() {
         return false;
-    }
-})
+    };
+});
