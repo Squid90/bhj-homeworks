@@ -35,7 +35,6 @@ xhrGet.addEventListener('readystatechange', () => {
                 xhrPost.send( `vote=${id}&answer=${answerId}` );
                 xhrPost.addEventListener('readystatechange', () => {
                     if (xhrPost.readyState === xhrPost.DONE) {
-                        //pollAnswers.outerHTML = '';
                         const stat = JSON.parse(xhrPost.responseText).stat;
                         stat.forEach(element => {
                             pollAnswers.innerHTML += `<p>${element.answer}: <b>${element.votes}</b></p>`
